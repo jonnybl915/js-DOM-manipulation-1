@@ -39,7 +39,7 @@ document.querySelector("#blow-up button").addEventListener('click', function() {
     // console.log("H" ,elementStyles.height);
 
     // elements as Strings to be converted:
-    var elementHeightString= elementStyles.height;
+    var elementHeightString = elementStyles.height;
     var elementWidthString = elementStyles.width;
 
     // (3) Convert the height/width of circle element from a string to a number
@@ -57,27 +57,27 @@ document.querySelector("#blow-up button").addEventListener('click', function() {
 
 
     if (doubleWidth > 320) {
-      blowUpCircleSelector.style.height = "40px";
-      blowUpCircleSelector.style.width = "40px";
+        blowUpCircleSelector.style.height = "40px";
+        blowUpCircleSelector.style.width = "40px";
 
     } else {
 
-      blowUpCircleSelector.style.height = doubleHeight + "px";
-      blowUpCircleSelector.style.width = doubleWidth + "px";
+        blowUpCircleSelector.style.height = doubleHeight + "px";
+        blowUpCircleSelector.style.width = doubleWidth + "px";
     }
 
-      // var height = blowUpCircleSelector.style.height;
-      // console.log(height);
-      // var stringHeightArray = blowUpCircleSelector.style.height.split("p")
-      // var numStringToDouble = stringHeightArray[0];
-      //
-      // var numToDouble = parseInt(numStringToDouble);
-      //
-      // numToDouble = numToDouble * 2;
-      // var newString = numToDouble + 'px';
-      // blowUpCircleSelector.style.height = newString;
-      // blowUpCircleSelector.style.width = newString;
-      //console.log('|n--------------------------------------');
+    // var height = blowUpCircleSelector.style.height;
+    // console.log(height);
+    // var stringHeightArray = blowUpCircleSelector.style.height.split("p")
+    // var numStringToDouble = stringHeightArray[0];
+    //
+    // var numToDouble = parseInt(numStringToDouble);
+    //
+    // numToDouble = numToDouble * 2;
+    // var newString = numToDouble + 'px';
+    // blowUpCircleSelector.style.height = newString;
+    // blowUpCircleSelector.style.width = newString;
+    //console.log('|n--------------------------------------');
     //bg.style.width = imgWidth + "px";
 
 })
@@ -85,23 +85,52 @@ document.querySelector("#blow-up button").addEventListener('click', function() {
 document.querySelector("#remove button").addEventListener('click', function() {
     // TASK #5
     var userListItems = document.querySelectorAll('#user-list li');
-    console.log(userListItems);
+    //console.log(userListItems);
     var newArrayOfItems = [];
     for (var i = 0; i < userListItems.length; i++) {
-      console.log(userListItems[i]);
-      if(userListItems[i].innerHTML === "inactive user") {
-        userListItems[i].style.display = "none";
-      }
+        //console.log(userListItems[i]);
+        if (userListItems[i].innerHTML === "inactive user") {
+            userListItems[i].style.display = "none";
+        }
     }
 })
 
 
 document.querySelector("#reverse-squares button").addEventListener('click', function() {
     // TASK #6
+    var allMySquareElements = document.querySelectorAll('.square');
+    //console.log(allMySquareElements);
+    var reversedArray = []
+    for (var i = 6; i >= 0; i--) {
+        reversedArray.push(allMySquareElements[i])
+    }
+    //console.log(reversedArray);
+    return reversedArray;
+    //SOOOOOOOOOOO CLOOOOOOOOOOOOSEEEEEEEEEEEEE
+
 })
 
 document.querySelector("#pig-latin button").addEventListener('click', function() {
     // TASK #7
+    //select the elements to be reversed
+    var listItemsToBeReversed = document.querySelectorAll('#tasks li');
+
+    var reversedStrings = [];
+    for (var i = 0; i < listItemsToBeReversed.length; i++) {
+        console.log(listItemsToBeReversed[i]);
+
+        var stringArray = listItemsToBeReversed[i].innerHTML.split('').reverse()
+        console.log(stringArray);
+
+        var reversedString = stringArray.join('');
+        console.log(reversedString);
+
+        reversedStrings.push(reversedString);
+        console.log(reversedStrings);
+
+    }
+    listItemsToBeReversed.innerHTML = reversedStrings;
+
 })
 
 document.querySelector("#cycle-image button").addEventListener('click', function() {
