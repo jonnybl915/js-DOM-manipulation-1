@@ -65,7 +65,7 @@ document.querySelector("#blow-up button").addEventListener('click', function() {
       blowUpCircleSelector.style.height = doubleHeight + "px";
       blowUpCircleSelector.style.width = doubleWidth + "px";
     }
-})
+
       // var height = blowUpCircleSelector.style.height;
       // console.log(height);
       // var stringHeightArray = blowUpCircleSelector.style.height.split("p")
@@ -80,10 +80,19 @@ document.querySelector("#blow-up button").addEventListener('click', function() {
       //console.log('|n--------------------------------------');
     //bg.style.width = imgWidth + "px";
 
-
+})
 
 document.querySelector("#remove button").addEventListener('click', function() {
     // TASK #5
+    var userListItems = document.querySelectorAll('#user-list li');
+    console.log(userListItems);
+    var newArrayOfItems = [];
+    for (var i = 0; i < userListItems.length; i++) {
+      console.log(userListItems[i]);
+      if(userListItems[i].innerHTML === "inactive user") {
+        userListItems[i].style.display = "none";
+      }
+    }
 })
 
 
