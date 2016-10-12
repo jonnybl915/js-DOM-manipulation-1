@@ -98,39 +98,36 @@ document.querySelector("#remove button").addEventListener('click', function() {
 
 document.querySelector("#reverse-squares button").addEventListener('click', function() {
     // TASK #6
-    var allMySquareElements = document.querySelectorAll('.square');
-    //console.log(allMySquareElements);
-    var reversedArray = []
-    for (var i = 6; i >= 0; i--) {
-        reversedArray.push(allMySquareElements[i])
-    }
-    //console.log(reversedArray);
-    return reversedArray;
-    //SOOOOOOOOOOO CLOOOOOOOOOOOOSEEEEEEEEEEEEE
 
-})
+    var allMySquareElements = document.querySelectorAll('div span');
+    var allMySquareElementsReversed = [];
+    console.log(allMySquareElements.length);
+
+    for (var i = allMySquareElements.length -1; i >= 0; i--) {
+
+      var currentEl = allMySquareElements[i];
+      var parentNodeOfCurrentEl = currentEl.parentNode;
+      parentNodeOfCurrentEl.removeChild(currentEl);
+      parentNodeOfCurrentEl.appendChild(currentEl);
+    }
+
+  })
 
 document.querySelector("#pig-latin button").addEventListener('click', function() {
+
     // TASK #7
     //select the elements to be reversed
     var listItemsToBeReversed = document.querySelectorAll('#tasks li');
 
     var reversedStrings = [];
     for (var i = 0; i < listItemsToBeReversed.length; i++) {
-        console.log(listItemsToBeReversed[i]);
 
-        var stringArray = listItemsToBeReversed[i].innerHTML.split('').reverse()
-        console.log(stringArray);
-
-        var reversedString = stringArray.join('');
-        console.log(reversedString);
-
-        reversedStrings.push(reversedString);
-        console.log(reversedStrings);
+        var currentElement = listItemsToBeReversed[i];
+        var reverseOfCurrentElement = currentElement.innerHTML.split('').reverse().join('');
+        var parentNodeOfCurrentElement = currentElement.parentNode;
+        currentElement.innerHTML = reverseOfCurrentElement;
 
     }
-    listItemsToBeReversed.innerHTML = reversedStrings;
-
 })
 
 document.querySelector("#cycle-image button").addEventListener('click', function() {

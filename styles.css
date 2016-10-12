@@ -8,6 +8,11 @@ body{
 hr.q-divider{
   margin: 80px 0;
 }
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
 
 .exercise-container{
   font-size: 0;
